@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Collection</h1>
+    <form class="" action="/upsert" method="post">
+      <input type="text" name="name" value="" placeholder="Name">
+      <input type="text" name="platform" value="" placeholder="Platform">
+      <input type="text" name="genre" value="" placeholder="Genre">
+      <input type="text" name="completed" value="" placeholder="Completed">
+      <button type="submit" name="button"><h4>submit</h4></button>
+    </form>
+
+
+<table>
+  <tr>
+  <th>Name</th>
+  <th>Platform</th>
+  <th>Genre</th>
+  <th>Completed</th>
+  <th>Edit</th>
+  <th>Delete</th>
+  </tr>
+  {{#games}}
+  <tr>
+    <td>{{name}}</td>
+    <td>{{platform}}</td>
+    <td>{{genre}}</td>
+    <td>{{completed}}</td>
+    <td><a href="/edit/?id={{_id}}"><button type="button" name="button"><h5>Edit<h5></button></a></td>
+    <td><form action="/delete" method="post"><input name="id" type="hidden" value="{{_id}}"><button type="submit" name="button"><h5>Delete<h5></button></form></td>
+  </tr>
+  {{/games}}
+</table>
+
+  </body>
+</html>

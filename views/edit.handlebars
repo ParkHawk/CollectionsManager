@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit</title>
+  </head>
+  <body>
+    <section>
+      <form class="" action="/upsert" method="post">
+        {{#if games._id}}
+          <input type="hidden" name="_id" value="{{games._id}}"/>
+        {{/if}}
+        <input type="text" name="name" placeholder="Name" value="{{games.name}}">
+        <input type="text" name="platform" placeholder="Platform" value="{{games.platform}}">
+        <input type="text" name="genre" placeholder="Genre" value="{{games.genre}}">
+        <input type="text" name="completed" placeholder="Completed" value="{{games.completed}}">
+        <button type="submit" name="button"><h4>submit</h4></button>
+
+    </section>
+
+
+
+
+  </body>
+</html>
